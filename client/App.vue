@@ -3,6 +3,7 @@
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
+
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
@@ -18,17 +19,20 @@
     </ul>
 
     <Title secondary>{{ msg }}</Title>
+    <Date> {{ date }} </Date>
   </div>
 </template>
 
 <script>
 import Title from './Title.vue';
+import Date from './Date.vue';
 
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      date: 'April 2016'
     }
   },
   components: {

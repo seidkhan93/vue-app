@@ -6,11 +6,6 @@
 
 <script>
 export default {
-  props: {
-    'secondary': {
-      default: null
-    }
-  },
   methods: {
     getClass() {
       return 'date'

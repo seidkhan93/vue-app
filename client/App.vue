@@ -29,9 +29,9 @@
 </template>
 
 <script>
-import Title from './Title.vue';
-import Date from './Date.vue';
-import Analytics from "./Analytics.vue";
+import Title from './components/Title.vue';
+import Date from './components/Date.vue';
+import Analytics from "./components/Analytics.vue";
 
 export default {
   name: 'app',

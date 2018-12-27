@@ -9,7 +9,7 @@
  		props: ['post']
 	}
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 	.analytics {
 		display: flex;
 		flex-direction: column;

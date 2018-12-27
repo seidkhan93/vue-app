@@ -30,7 +30,7 @@ $colorTitleSecondary: #000000;
 
 .title {
     font-weight: normal;
-    font-size: 263x;
+    font-size: 26px;
     line-height: 33px;
     font-family: inherit;
     text-transform: capitalize;

@@ -3,6 +3,7 @@
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
+
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
@@ -16,16 +17,38 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+
+    <Title secondary>{{ msg }}</Title>
+    <Date> {{ date }} </Date>
+    <ul>
+      <li v-for="item in analytics">
+        <analytics :post="item"></analytics>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
+import Title from './components/Title.vue';
+import Date from './components/Date.vue';
+import Analytics from "./components/Analytics.vue";
+
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      date: 'April 2016',
+      analytics: [
+        {title: "20+", content: "Hours of work"}, 
+        {title: "10 000+", content: "Views"}, 
+        {title: "12", content: "Team members"}
+      ]
     }
+  },
+  components: {
+    Title,
+    analytics: Analytics
   }
 }
 </script>

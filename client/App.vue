@@ -25,6 +25,7 @@
         <analytics :post="item"></analytics>
       </li>
     </ul>
+    <app-article></app-article>
   </div>
 </template>
 
@@ -32,6 +33,7 @@
 import Title from './components/Title.vue';
 import Date from './components/Date.vue';
 import Analytics from "./components/Analytics.vue";
+import Article from "./components/Article.vue"
 
 export default {
   name: 'app',
@@ -43,12 +45,13 @@ export default {
         {title: "20+", content: "Hours of work"}, 
         {title: "10 000+", content: "Views"}, 
         {title: "12", content: "Team members"}
-      ]
+      ],
     }
   },
   components: {
     Title,
-    analytics: Analytics
+    analytics: Analytics,
+    appArticle: Article
   }
 }
 </script>

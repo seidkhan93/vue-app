@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: 'Title',
   props: {
     'secondary': {
       default: null
@@ -32,8 +33,8 @@ $colorTitleSecondary: #000000;
     font-weight: normal;
     font-size: 26px;
     line-height: 33px;
-    font-family: inherit;
     text-transform: capitalize;
+    font-family: 'Roboto';
 
     &_color_primary {
       color: $colorTitlePrimary;

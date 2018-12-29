@@ -1,41 +1,27 @@
 <template>
-  
-  <div class="container-fluid">
+    <div class="container-fluid">
         <div class="row row_padding-top">
-            <div class="col-5">
+            <div class="col">
                 <nav class="navbar"> 
                     <ul class="navbar__list">
-                        <li class="navbar__list-item"><LinkName history > History </LinkName></li>
-                        <li class="navbar__list-item"><LinkName rightMargin > Timeline </LinkName></li>
-                        <li class="navbar__list-item"><LinkName rightMargin > Events </LinkName></li>
-                        <li class="navbar__list-item"><LinkName > About us </LinkName></li>
+                        <li class="navbar__list-item"><Link history> History </Link></li>
+                        <li class="navbar__list-item"><Link rightMargin> Timeline </Link></li>
+                        <li class="navbar__list-item"><Link rightMargin> Events </Link></li>
+                        <li class="navbar__list-item"><Link> About us </Link></li>
                     </ul>
                 </nav>
             </div>
         </div>
-  </div>
+    </div>
 </template>
 
 <script>
-import link from './Link.vue'; 
-import Title from './Title.vue';
-
 export default {
-    name: 'navbar',
-
-    components: {
-    LinkName: link,
-    Title
-    }
-    
+    name: 'Navbar',
 }
 </script>
 
 <style lang="scss">
-@import "reset";
-@import "main";
-@import "../node_modules/bootstrap/scss/bootstrap-grid";
-
 .navbar__list-item {
     display: inline-block;
 }

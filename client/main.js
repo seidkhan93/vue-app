@@ -1,16 +1,19 @@
-import "_reset.scss"
-import "_main.scss"
-import "../node_modules/bootstrap/scss/bootstrap-grid"
+import "./_reset.scss";
+import "./_main.scss";
+import "bootstrap/scss/bootstrap-grid.scss";
 
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import App from './App.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-Vue.use(VueRouter)
+import router from './router';
+
+import App from './App.vue';
+import Plug from './components/index';
+
+Vue.use(VueRouter);
+Vue.use(Plug);
+
 new Vue({
-  el: '#app',
+  router,
   render: h => h(App)
-})
-
-
-
+}).$mount('#app');

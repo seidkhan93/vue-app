@@ -1,86 +1,38 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+  <div>
+    <div class="main">
+      <Navbar />
 
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+      <router-view></router-view>
+    </div>
 
-    <Title secondary>{{ msg }}</Title>
-    <Date> {{ date }} </Date>
-    <ul>
-      <li v-for="item in analytics">
-        <analytics :post="item"></analytics>
-      </li>
-    </ul>
-    <app-article></app-article>
+    <div class="bg" :class="{ 'is-active': !active, 'is-inactive': active }"></div>
   </div>
 </template>
 
 <script>
-import Title from './components/Title.vue';
-import Date from './components/Date.vue';
-import Analytics from "./components/Analytics.vue";
-import Article from "./components/Article.vue"
-
 export default {
-  name: 'app',
-  data () {
+  name: 'App',
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      date: 'April 2016',
-      analytics: [
-        {title: "20+", content: "Hours of work"}, 
-        {title: "10 000+", content: "Views"}, 
-        {title: "12", content: "Team members"}
-      ],
+      active: null
     }
   },
-  components: {
-    Title,
-    analytics: Analytics,
-    appArticle: Article
+  beforeMount() {
+    if (this.$route.fullPath === '/detail') {
+      this.active = true;
+    } else {
+      this.active = false;
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      if (to.fullPath === '/detail') {
+        this.active = true;
+      } else {
+        this.active = false;
+      }
+    }
   }
 }
 </script>
-
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-</style>

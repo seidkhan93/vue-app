@@ -1,13 +1,12 @@
 <template>
-  
-    <a :class="getClass()" href="#"><slot></slot></a>
-  
+    <a :class="getClass()" href="#">
+        <slot></slot>
+    </a>
 </template>
 
 <script>
 export default {
-    name: 'link',
-
+    name: 'Link',
     props: {
         animated: {
             default: null
@@ -19,39 +18,39 @@ export default {
             default: null
         }
     },
+    data() {
+        return {
+            className: ''
+        }
+    },
     methods: {
         getClass() {
-            if (this.animated === ''){
-                this.animated = 'link_animated';
-            
-            } 
-            if (this.rightMargin === ''){
-                this.rightMargin = 'link_right-margin';
-                
+            if (this.animated){
+                this.className += 'link_animated';
             }
 
-            if (this.history === ''){
-                this.history = 'link_history';
-                
+            if (this.rightMargin){
+                this.className += 'link_right-margin';
             }
 
-            return 'link ' +  this.rightMargin + ' ' + this.animated + ' ' + this.history;
-          
+            if (this.history){
+                this.className += 'link_history';
+            }
+
+            return 'link ' + this.className;
         }
     }
-
 }
 </script>
 
 <style lang="scss">
-
-
 .link {
     color: #fff;
     font-size: 13px;
     line-height: 19px;
     font-weight: 500;
     text-decoration: none;
+    font-family: 'Roboto';
   
     &_animated {
         transition: all 0.2s linear;
@@ -73,5 +72,4 @@ export default {
         text-decoration: none;
     }
 }
-
 </style>

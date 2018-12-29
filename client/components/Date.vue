@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: 'Date',
   methods: {
     getClass() {
       return 'date';

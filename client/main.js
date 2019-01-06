@@ -1,6 +1,6 @@
-import "_reset.scss"
-import "_main.scss"
-import "../node_modules/bootstrap/scss/bootstrap-grid"
+import "./_reset.scss"
+import "./_main.scss"
+import "bootstrap/scss/bootstrap-grid.scss"
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'

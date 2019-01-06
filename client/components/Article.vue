@@ -36,90 +36,97 @@
 		</div>
 	</article>
 </template>
+
 <script>
-	
+export default {
+	name: 'Article'
+}
 </script>
+
 <style lang="scss">
-	$bgColor: #fff;
-	$textColor: #000;
-	$itemColor: #6d6e70;
-	$strokeColor: #979797;
+$bgColor: #fff;
+$textColor: #000;
+$itemColor: #6d6e70;
+$strokeColor: #979797;
 
-	.article {
+.article {
+	position: fixed;
+	display: block;
+	margin: 0;
+	padding: 50px 50px;
+	height: 100vh;
+	width: 736px;
+
+	right: 0;
+	top: 0;
+
+	background-color: $bgColor;
+	
+	overflow-y: auto;
+
+	&__header {
 		display: block;
+		padding: 0;
 		margin: 0;
-		padding: 50px 0;
-		width: 60%;
-		height: 100vh;
-		max-width: 736px;
+		padding-bottom: 13px; 
 
-		background-color: $bgColor;
-		
-		overflow-y: auto;
-		&__header {
-			display: block;
-			padding: 0;
-			margin: 0;
-			padding-bottom: 13px; 
+		border-bottom: 1px solid $strokeColor;
+	}
 
-			border-bottom: 1px solid $strokeColor;
-		}
+	&__item {
+		font-family: inherit;
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 19px;
 
-		&__item {
-			font-family: inherit;
-			font-size: 13px;
-			font-weight: 400;
-			line-height: 19px;
+		color: #6d6e70;
 
-			color: #6d6e70;
-
-			&_link {
-				text-decoration: none;
-				
-				&:hover {
-					text-decoration: underline;
-					text-decoration-style: dotted;
-  					text-decoration-color: $textColor;
-					opacity: 0.8;
-				}
+		&_link {
+			text-decoration: none;
+			
+			&:hover {
+				text-decoration: underline;
+				text-decoration-style: dotted;
+					text-decoration-color: $textColor;
+				opacity: 0.8;
 			}
 		}
-
-		&__action {
-			display: block;
-			margin: 0;
-			padding: 20px 0;
-		}
-
-		&__title {
-			display: block;
-			margin-bottom: 32px;
-
-			font-family: inherit;
-			font-size: 24px;
-			font-weight: 500;
-			line-height: 33px;
-			color: $textColor;
-
-			text-align: left;
-		}
-
-		&__content {
-			display: block;
-			margin: 0;
-			margin-bottom: 12px;
-			padding: 0;
-			
-			font-family: inherit;
-			font-size: 13px;
-			line-height: 19px;
-			font-weight: 400;
-			color: $textColor;
-
-			text-align: left;
-		}
-
 	}
+
+	&__action {
+		display: block;
+		margin: 0;
+		padding: 20px 0;
+	}
+
+	&__title {
+		display: block;
+		margin-bottom: 32px;
+
+		font-family: 'Roboto';
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 33px;
+		color: $textColor;
+
+		text-align: left;
+	}
+
+	&__content {
+		display: block;
+		margin: 0;
+		margin-bottom: 12px;
+		padding: 0;
+		
+		font-family: inherit;
+		font-size: 13px;
+		line-height: 19px;
+		font-weight: 400;
+		color: $textColor;
+
+		text-align: left;
+	}
+}
 </style>
 
 
